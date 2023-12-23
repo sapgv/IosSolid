@@ -7,7 +7,13 @@
 
 import Foundation
 
-final class Api {
+protocol IApi: AnyObject{
+    
+    func fetchApiData(completion: @escaping (Swift.Result<[[String: Any]], Error>) -> Void)
+    
+}
+
+final class Api: IApi {
     
     func fetchApiData(completion: @escaping (Swift.Result<[[String: Any]], Error>) -> Void) {
         

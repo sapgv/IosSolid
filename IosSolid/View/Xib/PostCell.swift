@@ -18,7 +18,7 @@ class PostCell: UITableViewCell {
         // Initialization code
     }
     
-    func setup(post: Post) {
+    func setup(post: IPost) {
         self.titleLabel.text = post.title
         self.bodyLabel.text = post.body
     }

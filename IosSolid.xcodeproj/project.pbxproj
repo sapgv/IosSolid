@@ -28,6 +28,7 @@
 		107033102B36CBE600AE3114 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070330F2B36CBE600AE3114 /* CoreDataStorage.swift */; };
 		107033122B36CC4100AE3114 /* CDPost + CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107033112B36CC4100AE3114 /* CDPost + CoreData.swift */; };
 		107F36A52B36D11E0051FF42 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F36A42B36D11E0051FF42 /* Api.swift */; };
+		107F36A72B36DDDD0051FF42 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F36A62B36DDDD0051FF42 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		1070330F2B36CBE600AE3114 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		107033112B36CC4100AE3114 /* CDPost + CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPost + CoreData.swift"; sourceTree = "<group>"; };
 		107F36A42B36D11E0051FF42 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		107F36A62B36DDDD0051FF42 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				107033082B36CAFB00AE3114 /* StorageError.swift */,
+				107F36A62B36DDDD0051FF42 /* Storage.swift */,
 				107033002B36C64B00AE3114 /* UserDefaultStorage.swift */,
 				1070330F2B36CBE600AE3114 /* CoreDataStorage.swift */,
 			);
@@ -261,6 +264,7 @@
 				107032DE2B36BF9000AE3114 /* PostListViewController.swift in Sources */,
 				107033072B36CAC300AE3114 /* Log.swift in Sources */,
 				107033122B36CC4100AE3114 /* CDPost + CoreData.swift in Sources */,
+				107F36A72B36DDDD0051FF42 /* Storage.swift in Sources */,
 				107F36A52B36D11E0051FF42 /* Api.swift in Sources */,
 				107032DA2B36BF9000AE3114 /* AppDelegate.swift in Sources */,
 				107032FE2B36C54800AE3114 /* Extensions.swift in Sources */,

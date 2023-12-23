@@ -7,7 +7,7 @@
 
 import CoreData
 
-final class CoreDataStorage {
+final class CoreDataStorage: IStorage {
     
     private let privateContext: NSManagedObjectContext
     
@@ -45,7 +45,7 @@ final class CoreDataStorage {
         
     }
     
-    func fetchFromStorage(completion: @escaping (Swift.Result<[Post], Error>) -> Void) {
+    func fetchFromStorage(completion: @escaping (Swift.Result<[IPost], Error>) -> Void) {
         
         self.privateContext.perform { [privateContext] in
             

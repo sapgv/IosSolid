@@ -7,9 +7,17 @@
 
 import UIKit
 
+protocol IPostListViewController: UIViewController {
+    
+    func updateView()
+    
+    func showError(error: Error)
+    
+}
+
 class PostListViewController: UIViewController {
 
-    var presenter: PostListViewPresenter!
+    var presenter: IPostListViewPresenter!
     
     private var tableView: UITableView!
     
@@ -63,7 +71,7 @@ class PostListViewController: UIViewController {
     
 }
 
-extension PostListViewController {
+extension PostListViewController: IPostListViewController {
     
     func updateView() {
         

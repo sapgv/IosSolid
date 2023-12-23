@@ -7,7 +7,17 @@
 
 import Foundation
 
-final class Post: Codable {
+protocol IPost: Codable {
+    
+    var id: Int { get }
+    
+    var title: String { get }
+    
+    var body: String { get }
+    
+}
+
+final class Post: Codable, IPost {
     
     let id: Int
     

@@ -27,9 +27,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     private func createPostListViewController() -> UIViewController {
         
-        let presenter = PostListViewPresenter()
+        let storage = CoreDataStorage()
+        let presenter = PostListViewPresenter(storage: storage)
+        
         let viewController = PostListViewController()
         viewController.presenter = presenter
+        
         let navigationController = UINavigationController(rootViewController: viewController)
         
         return navigationController

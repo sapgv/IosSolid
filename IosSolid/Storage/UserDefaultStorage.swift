@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class UserDefaultStorage {
+final class UserDefaultStorage: IStorage {
     
     static let postKey = "posts"
     
@@ -42,7 +42,7 @@ final class UserDefaultStorage {
     }
     
     
-    func fetchFromStorage(completion: @escaping (Swift.Result<[Post], Error>) -> Void) {
+    func fetchFromStorage(completion: @escaping (Swift.Result<[IPost], Error>) -> Void) {
         
         DispatchQueue.global().async {
             
