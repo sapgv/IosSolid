@@ -27,6 +27,7 @@
 		1070330E2B36CB5200AE3114 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070330D2B36CB5200AE3114 /* Model.swift */; };
 		107033102B36CBE600AE3114 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070330F2B36CBE600AE3114 /* CoreDataStorage.swift */; };
 		107033122B36CC4100AE3114 /* CDPost + CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107033112B36CC4100AE3114 /* CDPost + CoreData.swift */; };
+		107F36A52B36D11E0051FF42 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107F36A42B36D11E0051FF42 /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		1070330D2B36CB5200AE3114 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		1070330F2B36CBE600AE3114 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		107033112B36CC4100AE3114 /* CDPost + CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDPost + CoreData.swift"; sourceTree = "<group>"; };
+		107F36A42B36D11E0051FF42 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		107032D82B36BF9000AE3114 /* IosSolid */ = {
 			isa = PBXGroup;
 			children = (
+				107F36A32B36D1140051FF42 /* Api */,
 				107033032B36CA8200AE3114 /* CoreData */,
 				107032FF2B36C63900AE3114 /* Storage */,
 				107032FC2B36C53700AE3114 /* Extensions */,
@@ -173,6 +176,14 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		107F36A32B36D1140051FF42 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				107F36A42B36D11E0051FF42 /* Api.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -250,6 +261,7 @@
 				107032DE2B36BF9000AE3114 /* PostListViewController.swift in Sources */,
 				107033072B36CAC300AE3114 /* Log.swift in Sources */,
 				107033122B36CC4100AE3114 /* CDPost + CoreData.swift in Sources */,
+				107F36A52B36D11E0051FF42 /* Api.swift in Sources */,
 				107032DA2B36BF9000AE3114 /* AppDelegate.swift in Sources */,
 				107032FE2B36C54800AE3114 /* Extensions.swift in Sources */,
 				107033052B36CAA600AE3114 /* CoreData.swift in Sources */,

@@ -11,7 +11,7 @@ final class UserDefaultStorage {
     
     static let postKey = "posts"
     
-    func save(array: [[String: Any]], completion: @escaping (Error?) -> Void) {
+    func saveToStorage(array: [[String: Any]], completion: @escaping (Error?) -> Void) {
         
         DispatchQueue.global().async {
             
@@ -42,7 +42,7 @@ final class UserDefaultStorage {
     }
     
     
-    func fetch(completion: @escaping (Swift.Result<[Post], Error>) -> Void) {
+    func fetchFromStorage(completion: @escaping (Swift.Result<[Post], Error>) -> Void) {
         
         DispatchQueue.global().async {
             

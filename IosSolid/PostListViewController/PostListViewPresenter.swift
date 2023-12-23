@@ -16,34 +16,27 @@ class PostListViewPresenter {
     
     func update() {
         
-        DispatchQueue.global().async { [weak self] in
+        self.fetchApiData { [weak self] result in
             
-            Thread.sleep(forTimeInterval: 2)
-            
-            let array = Post.array
-            
-            self?.save(array: array) { error in
+            switch result {
+            case let .failure(error):
                 
-                if let error = error {
-                    DispatchQueue.main.async {
-                        self?.view?.showError(error: error)
-                    }
-                    return
+                DispatchQueue.main.async {
+                    self?.view?.showError(error: error)
                 }
-
-                self?.fetch { result in
+                
+            case let .success(array):
+                
+                self?.saveToStorage(array: array) { error in
                     
-                    switch result {
-                    case let .failure(error):
+                    if let error = error {
                         DispatchQueue.main.async {
                             self?.view?.showError(error: error)
                         }
-                    case let .success(posts):
-                        self?.posts = posts
-                        DispatchQueue.main.async {
-                            self?.view?.updateView()
-                        }
+                        return
                     }
+
+                    self?.fetchFromStorage()
                     
                 }
                 
@@ -53,7 +46,45 @@ class PostListViewPresenter {
         
     }
     
-    func save(array: [[String: Any]], completion: @escaping (Error?) -> Void) {
+    func fetchFromStorage() {
+        
+        self.fetchFromStorage { [weak self] result in
+            
+            switch result {
+            case let .failure(error):
+                DispatchQueue.main.async {
+                    self?.view?.showError(error: error)
+                }
+            case let .success(posts):
+                self?.posts = posts
+                DispatchQueue.main.async {
+                    self?.view?.updateView()
+                }
+            }
+            
+        }
+        
+    }
+    
+    private func fetchApiData(completion: @escaping (Swift.Result<[[String: Any]], Error>) -> Void) {
+        
+        DispatchQueue.global().async {
+            
+            Thread.sleep(forTimeInterval: 2)
+            
+            let array = Post.array
+            
+            DispatchQueue.main.async {
+                
+                completion(.success(array))
+                
+            }
+            
+        }
+        
+    }
+    
+    private func saveToStorage(array: [[String: Any]], completion: @escaping (Error?) -> Void) {
 
         DispatchQueue.global().async {
 
@@ -83,7 +114,7 @@ class PostListViewPresenter {
 
     }
 
-    func fetch(completion: @escaping (Swift.Result<[Post], Error>) -> Void) {
+    private func fetchFromStorage(completion: @escaping (Swift.Result<[Post], Error>) -> Void) {
 
         DispatchQueue.global().async {
 

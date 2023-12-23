@@ -21,6 +21,11 @@ class PostListViewController: UIViewController {
         self.setupTableView()
         self.layout()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.presenter.fetchFromStorage()
+    }
 
     private func setupTableView() {
         

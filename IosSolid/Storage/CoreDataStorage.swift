@@ -15,7 +15,7 @@ final class CoreDataStorage {
         self.privateContext = Model.coreData.createChildContextFromCoordinator(for: .privateQueueConcurrencyType)
     }
     
-    func save(array: [[String: Any]], completion: @escaping (Error?) -> Void) {
+    func saveToStorage(array: [[String: Any]], completion: @escaping (Error?) -> Void) {
         
         self.privateContext.perform { [privateContext] in
             
@@ -45,7 +45,7 @@ final class CoreDataStorage {
         
     }
     
-    func fetch(completion: @escaping (Swift.Result<[Post], Error>) -> Void) {
+    func fetchFromStorage(completion: @escaping (Swift.Result<[Post], Error>) -> Void) {
         
         self.privateContext.perform { [privateContext] in
             
