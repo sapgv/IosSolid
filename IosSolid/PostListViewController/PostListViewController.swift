@@ -61,6 +61,10 @@ class PostListViewController: UIViewController {
         self.tableView.refreshControl?.endRefreshing()
     }
     
+}
+
+extension PostListViewController {
+    
     func updateView() {
         
         self.endRefreshing()
